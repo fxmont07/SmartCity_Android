@@ -2,7 +2,7 @@
     <string name="internet">Internet required</string>
     <string name="noSucces">Request not succes try again or contact the informatic service</string>
     <!-- MainActivity -->
-    <string name="app_name">IntegretedProject</string>
+    <string name="app_name">SmartCity_Android</string>
     <string name="welcome">Welcome</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
