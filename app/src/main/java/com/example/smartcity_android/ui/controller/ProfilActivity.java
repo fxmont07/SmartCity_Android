@@ -91,9 +91,12 @@ public class ProfilActivity extends MenuActivity {
 
                     if(Tool.hasInternet(ProfilActivity.this)) {
                         editStudent(studentId,editStudent);
+                        Intent intent = new Intent(ProfilActivity.this , CriterionStudentActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(ProfilActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
                     }
+
                 }
             }
         });
@@ -157,7 +160,6 @@ public class ProfilActivity extends MenuActivity {
                     } catch (IOException e) {
                         Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
                     }
-                    Log.i("student", "no succes");
                     return;
                 }
                 StudentDTO studentResponse = response.body();
@@ -191,19 +193,11 @@ public class ProfilActivity extends MenuActivity {
                     }
                     return;
                 }
-
-                Intent intent = new Intent(ProfilActivity.this, CriterionStudentActivity.class);
-
-                SharedPreferences sharedPref = getSharedPreferences(getString(R.string.shared_pref_student), MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(getString(R.string.id_current_student), id);
-                editor.apply();
-                startActivity(intent);
             }
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Log.i("editStudent", "error");
+                Log.i("editStudent", "error"); //TODO à virer
             }
         });
     }
