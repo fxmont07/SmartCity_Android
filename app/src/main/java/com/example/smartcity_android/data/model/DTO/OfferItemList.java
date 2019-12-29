@@ -1,6 +1,4 @@
-package com.example.smartcity_android.data.model;
-
-import com.example.smartcity_android.data.model.DTO.AddressDTO;
+package com.example.smartcity_android.data.model.DTO;
 
 public class OfferItemList {
     private String titleJob;

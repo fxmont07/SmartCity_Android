@@ -1,6 +1,6 @@
 package com.example.smartcity_android.data;
 
-import com.example.smartcity_android.data.model.Token;
+import com.example.smartcity_android.data.model.DTO.TokenDTO;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ public class RetrofitFactory {
     public  static final String BASE_URL = "https://smartcitycarofx.azurewebsites.net/";
 
     private static Retrofit retrofit;
-    private static Token token;
+    private static TokenDTO token;
 
     private static OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new Interceptor() {
         @Override
@@ -49,11 +49,11 @@ public class RetrofitFactory {
         return retrofit;
     }
 
-    public static void setToken(Token token) {
+    public static void setToken(TokenDTO token) {
         RetrofitFactory.token = token;
     }
 
-    public static Token getToken() {
+    public static TokenDTO getToken() {
         return token;
     }
 }

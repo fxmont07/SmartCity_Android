@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 TokenDTO res = response.body();
-                RetrofitFactory.setToken(new Token(res.accessToken, res.expiresIn));
+                RetrofitFactory.setToken(new TokenDTO(res.accessToken, res.expiresIn));
                 JWT jwt = new JWT(res.accessToken);
 
                 Claim claim = jwt.getClaim("UserId");
