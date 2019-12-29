@@ -2,7 +2,6 @@ package com.example.smartcity_android.ui.controller;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -93,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
         }
 
-        //sectionDataAccess.findAllSection(sectionList);
+        findAllSection();
 
         adapter = new ArrayAdapter(SignUpActivity.this, android.R.layout.simple_list_item_1, sectionList);
         sSpSection.setAdapter(adapter);
@@ -124,10 +123,7 @@ public class SignUpActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
                     }
-                    //studentDataAccess.addStudent(newStudent);
-
                 }
-
             }
         });
         if (savedInstanceState != null) {
@@ -218,50 +214,19 @@ public class SignUpActivity extends AppCompatActivity {
         call.enqueue(new Callback<StudentDTO>() {
             @Override
             public void onResponse(Call<StudentDTO> call, Response<StudentDTO> response) {
-                if(!response.isSuccessful()){
-                    Log.i("section", "no succes");
+                if (!response.isSuccessful()) {
+                    try {
+                        Toast.makeText(SignUpActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                    }
                     return;
                 }
-                StudentDTO studentDTO = response.body();
-                // student.setId(studentDTO.getId()); //TODO ajouter un id dans student DTO
-
             }
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
                 Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();            }
-        });
-    }
-
-    public void findStudentById(int studentId, TextInputLayout txtInName, TextInputLayout txtInFirstName, TextInputLayout txtInStreet, TextInputLayout txtInStreetNumber, TextInputLayout txtInLocality, TextInputLayout txtInPostCode, TextInputLayout txtInCountry) {
-        Retrofit retrofit = RetrofitFactory.getIntanceWithToken();
-        StudentService studentService = retrofit.create(StudentService.class);
-        Call<StudentDTO> call = studentService.getById(studentId);
-        call.enqueue(new Callback<StudentDTO>() {
-            @Override
-            public void onResponse(Call<StudentDTO> call, Response<StudentDTO> response) {
-                if (!response.isSuccessful()) {
-                    Log.i("student", "no succes");
-                    return;
-                }
-
-                if(response.isSuccessful()) {
-                    StudentDTO studentResponse = response.body();
-                    txtInName.getEditText().setText(studentResponse.getLastName());
-                    txtInFirstName.getEditText().setText(studentResponse.getFirstName());
-                    txtInStreet.getEditText().setText(studentResponse.getAddress().getStreet());
-                    txtInStreetNumber.getEditText().setText(studentResponse.getAddress().getNumber());
-                    txtInLocality.getEditText().setText(studentResponse.getAddress().getLocality());
-                    txtInPostCode.getEditText().setText(studentResponse.getAddress().getPostCode());
-                    txtInCountry.getEditText().setText(studentResponse.getAddress().getCountry());
-
-                }
-            }
-
-            @Override
-            public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
-            }
         });
     }
 }

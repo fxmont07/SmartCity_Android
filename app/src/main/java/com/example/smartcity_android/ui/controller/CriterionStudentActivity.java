@@ -3,7 +3,6 @@ package com.example.smartcity_android.ui.controller;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -41,7 +40,6 @@ public class CriterionStudentActivity extends MenuActivity {
 
     @BindView(R.id.BGo)
     public Button bGo;
-
 
     ArrayList<CriterionStudent> criterionStudent = new ArrayList<>();
 
@@ -110,7 +108,6 @@ public class CriterionStudentActivity extends MenuActivity {
                         adapter.setCriterions(criterionStudent);
                         Objects.requireNonNull(rVCriterion.getAdapter()).notifyDataSetChanged();
             }
-
             @Override
             public void onFailure(Call<List<CriterionStudentDTO>> call, Throwable t) {
                 Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
@@ -130,15 +127,20 @@ public class CriterionStudentActivity extends MenuActivity {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if (!response.isSuccessful()) {
-                    Log.i("student", response.message() + " *********************");
+                    try {
+                        Toast.makeText(CriterionStudentActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
+                    } catch (IOException e) {
+                        Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                    }
                     return;
                 }
+                Toast.makeText(CriterionStudentActivity.this, R.string.save, Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Log.i("student", "error" + t.getMessage() + "  " + t.getCause());
+                Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
 
             }
         });

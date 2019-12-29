@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.smartcity_android.R;
-import com.example.smartcity_android.DAO.OfferDataAccess;
 import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.DTO.OfferDetails;
 import com.example.smartcity_android.service.OfferService;
@@ -60,8 +59,6 @@ public class OfferDetailsActivity extends MenuActivity {
     @BindView(R.id.BEvaluate)
     public Button bEvaluate;
 
-    private OfferDataAccess offerDataAccess;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,7 +67,6 @@ public class OfferDetailsActivity extends MenuActivity {
 
         int idOffer = getIntent().getIntExtra("currentOffer", -1);
         ratingBar.setEnabled(false);
-        offerDataAccess = new OfferDataAccess();
 
         if(Tool.hasInternet(OfferDetailsActivity.this)) {
             findOfferById(idOffer);

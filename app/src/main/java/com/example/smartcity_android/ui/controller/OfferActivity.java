@@ -111,7 +111,6 @@ public class OfferActivity extends MenuActivity  {
                     OfferAdapter adapter = (OfferAdapter) rVAdapter;
                     adapter.setOffers(offerResultMatchings);
                     Objects.requireNonNull(rVOffer.getAdapter()).notifyDataSetChanged();
-
             }
 
             @Override
