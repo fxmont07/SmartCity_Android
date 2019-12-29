@@ -42,7 +42,7 @@
     <string name="mailTitle">Envoyer email</string>
     <string name="comment">Commentaire</string>
     <string name="send">"Envoyer "</string>
-    <string name="save">Sauver</string>
+    <string name="save">Critères enregistrés</string>
     <string name="confirmPassword">Confirmer le mot de passe</string>
     <string name="country">Pays</string>
     <string name="wrongPostCode">Le code postal doit être compris entre 1000 et 9999</string>
