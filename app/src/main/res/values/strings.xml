@@ -1,0 +1,67 @@
+<resources>
+    <string name="internet">Internet required</string>
+    <string name="noSucces">Request not succes try again or contact the informatic service</string>
+    <!-- MainActivity -->
+    <string name="app_name">IntegretedProject</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="fieldEmpty">Field can\'t be empty</string>
+    <string name="wrongEmailFormat">Wrong email format</string>
+    <string name="unknowEmail">Unknow Email</string>
+    <string name="wrongIds">Email or password is wrong</string>
+    <string name="forgotPassword">Forgot password</string>
+    <string name="wrongFieldLength">The field length might be over </string>
+
+    <!-- SignUpActivity -->
+    <string name="name">Name</string>
+    <string name="firstName">Fist Name</string>
+    <string name="postCode">Post code</string>
+    <string name="locality">Locality</string>
+    <string name="street">Street</string>
+    <string name="streetNumber">N°</string>
+    <string name="go">Go</string>
+    <string name="phone">Phone</string>
+    <string name="section">Section</string>
+    <string name="question">Secret question</string>
+    <string name="answer">Secret answer</string>
+
+
+    <!-- ProfilActivity -->
+    <string name="infomation">My Information</string>
+    <string name="save">Save</string>
+
+    <!-- CriterionActivity -->
+    <string name="criterion">My Criterions</string>
+    <string name="label">Criterion</string>
+    <string name="mandatory">Mandatory</string>
+    <string name="optional">Optional</string>
+    <string name="forbidden">Forbidden</string>
+    <string name="modifSaved">Modification saved</string>
+
+    <!-- OfferDetailsActivity -->
+    <string name="offerDescription">Offer description</string>
+    <string name="location">Location</string>
+    <string name="offerTitle">Offer title</string>
+    <string name="contact">Contact</string>
+    <string name="evaluate">Evaluate</string>
+    <string name="mailTitle">Send email</string>
+
+
+    <!-- Evaluate -->
+    <string name="comment">Comment</string>
+    <string name="send">Send</string>
+
+    <!-- Key SharedPreferences -->
+    <string name="shared_pref_student">student</string>
+    <!-- Key In shared_pref_student -->
+    <string name="id_current_student">id_current_student</string>
+
+    <string name="logout">Log out</string>
+    <string name="myCriteria">myCriteria</string>
+    <string name="confirmPassword">Confirm password</string>
+    <string name="country">Country</string>
+    <string name="wrongPostCode">The postal code must be between 1000 and 9999</string>
+</resources>

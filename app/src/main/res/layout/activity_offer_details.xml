@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.controller.OfferDetailsActivity">
+
+    <ScrollView
+        android:id="@+id/ScrollView"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/IOffer"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+
+
+                android:layout_marginTop="8dp"
+                android:src="@color/colorAccent"
+                app:civ_border_color="#FAEF6B"
+                app:civ_border_width="10dp"
+                app:civ_circle_background_color="#673AB7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/TCompanyName"
+                style="@style/Widget.AppCompat.TextView.SpinnerItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The company name"
+                android:textSize="26sp"
+                app:layout_constraintEnd_toEndOf="@+id/IOffer"
+                app:layout_constraintStart_toStartOf="@+id/IOffer"
+                app:layout_constraintTop_toBottomOf="@+id/IOffer" />
+
+            <RatingBar
+                android:id="@+id/RBRating"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                android:numStars="5"
+                android:padding="0dip"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TCompanyName" />
+
+
+            <TextView
+                android:id="@+id/TOfferDescription"
+                android:layout_width="0dp"
+                android:layout_height="121dp"
+                android:layout_marginTop="8dp"
+                android:paddingStart="32dp"
+                android:paddingTop="16dp"
+                android:text="Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim "
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TOfferDescriptionTitle" />
+
+            <TextView
+                android:id="@+id/TOfferDescriptionTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/offerDescription"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/TOfferTitleTitle"
+                app:layout_constraintTop_toBottomOf="@+id/TOfferTitle" />
+
+            <TextView
+                android:id="@+id/TLocationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/location"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/TOfferDescriptionTitle"
+                app:layout_constraintTop_toBottomOf="@+id/TOfferDescription" />
+
+
+            <TextView
+                android:id="@+id/TLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TLocationTitle" />
+
+            <TextView
+                android:id="@+id/TOfferTitleTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/offerTitle"
+
+                android:textSize="18sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/RBRating"
+                app:layout_constraintTop_toBottomOf="@+id/RBRating" />
+
+            <TextView
+                android:id="@+id/TOfferTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TOfferTitleTitle" />
+
+            <Button
+                android:id="@+id/BContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="70dp"
+                android:text="@string/contact"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TLocationTitle" />
+
+            <Button
+                android:id="@+id/BEvaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:text="@string/evaluate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/BContact" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
