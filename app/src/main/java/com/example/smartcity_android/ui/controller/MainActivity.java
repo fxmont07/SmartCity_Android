@@ -18,7 +18,6 @@ import com.example.smartcity_android.R;
 import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.DTO.Login;
 import com.example.smartcity_android.data.model.DTO.TokenDTO;
-import com.example.smartcity_android.data.model.Token;
 import com.example.smartcity_android.dataAccess.service.LoginService;
 import com.example.smartcity_android.tool.Tool;
 import com.google.android.material.textfield.TextInputLayout;
@@ -142,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 TokenDTO res = response.body();
-                RetrofitFactory.setToken(new Token(res.accessToken, res.expiresIn));
+                RetrofitFactory.setToken(new TokenDTO(res.accessToken, res.expiresIn));
                 JWT jwt = new JWT(res.accessToken);
 
                 Claim claim = jwt.getClaim("UserId");

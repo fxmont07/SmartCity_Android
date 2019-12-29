@@ -10,12 +10,12 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartcity_android.R;
-import com.example.smartcity_android.data.model.Evaluation;
+import com.example.smartcity_android.data.model.DTO.EvaluationDTO;
 
 import java.util.List;
 
 public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.EvaluationHolder> {
-    private List<Evaluation> evaluations;
+    private List<EvaluationDTO> evaluations;
     private Context context;
 
     public static class EvaluationHolder extends RecyclerView.ViewHolder {
@@ -30,7 +30,7 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
         }
     }
 
-    public EvaluationAdapter(List<Evaluation> evaluations, Context context) {
+    public EvaluationAdapter(List<EvaluationDTO> evaluations, Context context) {
         this.evaluations = evaluations;
         this.context = context;
     }
@@ -44,8 +44,8 @@ public class EvaluationAdapter extends RecyclerView.Adapter<EvaluationAdapter.Ev
 
     @Override
     public void onBindViewHolder(EvaluationAdapter.EvaluationHolder holder, int position) {
-        holder.comment.setText(evaluations.get(position).getDescription());
-        holder.rating.setRating(evaluations.get(position).getPointOn5());
+        //holder.comment.setText(evaluations.get(position).getDescription());
+        //holder.rating.setRating(evaluations.get(position).getPointOn5());
         holder.rating.setEnabled(false);
         holder.rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override

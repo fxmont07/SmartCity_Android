@@ -1,7 +1,5 @@
 package com.example.smartcity_android.data.model.DTO;
 
-import com.example.smartcity_android.data.model.Section;
-
 public class StudentDTO {
 
     private Integer id;
@@ -13,7 +11,7 @@ public class StudentDTO {
     private String streetNumber;
 
     private AddressDTO address;
-    private Section section;
+    private SectionDTO section;
 
     public StudentDTO() {
     }
@@ -82,11 +80,11 @@ public class StudentDTO {
         this.address = address;
     }
 
-    public Section getSection() {
+    public SectionDTO getSection() {
         return section;
     }
 
-    public void setSection(Section section) {
+    public void setSection(SectionDTO section) {
         this.section = section;
     }
 }
