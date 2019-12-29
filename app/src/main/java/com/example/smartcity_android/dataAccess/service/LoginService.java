@@ -1,4 +1,4 @@
-package com.example.smartcity_android.service;
+package com.example.smartcity_android.dataAccess.service;
 
 
 import com.example.smartcity_android.data.model.DTO.Login;

@@ -19,7 +19,7 @@ import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.DTO.Login;
 import com.example.smartcity_android.data.model.DTO.TokenDTO;
 import com.example.smartcity_android.data.model.Token;
-import com.example.smartcity_android.service.LoginService;
+import com.example.smartcity_android.dataAccess.service.LoginService;
 import com.example.smartcity_android.tool.Tool;
 import com.google.android.material.textfield.TextInputLayout;
 

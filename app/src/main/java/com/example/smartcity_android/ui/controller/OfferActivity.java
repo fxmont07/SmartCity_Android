@@ -12,7 +12,7 @@ import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.CriterionStudent;
 import com.example.smartcity_android.data.model.DTO.CriterionStudentDTO;
 import com.example.smartcity_android.data.model.DTO.OfferResultMatching;
-import com.example.smartcity_android.service.CriterionStudentService;
+import com.example.smartcity_android.dataAccess.service.CriterionStudentService;
 import com.example.smartcity_android.tool.Tool;
 import com.example.smartcity_android.ui.OfferAdapter;
 import com.google.gson.Gson;

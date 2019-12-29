@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.smartcity_android.R;
 import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.DTO.OfferDetails;
-import com.example.smartcity_android.service.OfferService;
+import com.example.smartcity_android.dataAccess.service.OfferService;
 import com.example.smartcity_android.tool.Tool;
 
 import java.io.IOException;

@@ -16,7 +16,7 @@ import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.DTO.AddressDTO;
 import com.example.smartcity_android.data.model.DTO.StudentDTO;
 import com.example.smartcity_android.data.model.DTO.StudentEditForm;
-import com.example.smartcity_android.service.StudentService;
+import com.example.smartcity_android.dataAccess.service.StudentService;
 import com.example.smartcity_android.tool.Tool;
 import com.google.android.material.textfield.TextInputLayout;
 
