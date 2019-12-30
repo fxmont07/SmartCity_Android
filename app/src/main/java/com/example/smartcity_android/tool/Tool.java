@@ -8,6 +8,8 @@ import android.util.Patterns;
 import com.example.smartcity_android.R;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.regex.Pattern;
+
 public class Tool {
     // Static class for use tool, static method
     public static boolean isEmailValid(TextInputLayout target, Context context) {
@@ -31,7 +33,8 @@ public class Tool {
     }
 
     public static boolean hasPostCodeValid(TextInputLayout target, Context context){
-        if(Integer.parseInt(target.getEditText().getText().toString().trim()) < 1000 || Integer.parseInt(target.getEditText().getText().toString().trim()) > 9999){
+        Pattern p = Pattern.compile("[1-9]\\d{3}");
+        if(!p.matcher(target.getEditText().getText().toString()).matches()){
             target.setError(context.getText(R.string.wrongPostCode));
             return false;
         }
