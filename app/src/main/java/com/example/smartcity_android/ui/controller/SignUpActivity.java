@@ -1,6 +1,7 @@
 package com.example.smartcity_android.ui.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -86,13 +87,12 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         ButterKnife.bind(this);
 
-    if(Tool.hasInternet(SignUpActivity.this)) {
+        if(Tool.hasInternet(SignUpActivity.this)) {
             findAllSection();
         } else {
             Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
         }
 
-        findAllSection();
 
         adapter = new ArrayAdapter(SignUpActivity.this, android.R.layout.simple_list_item_1, sectionList);
         sSpSection.setAdapter(adapter);
@@ -120,6 +120,8 @@ public class SignUpActivity extends AppCompatActivity {
 
                     if(Tool.hasInternet(SignUpActivity.this)) {
                         addStudent(newStudent);
+                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                        startActivity(intent);
                     } else {
                         Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
                     }
