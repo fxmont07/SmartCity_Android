@@ -33,7 +33,7 @@ public class ProfilActivity extends MenuActivity {
     @BindView(R.id.TInName)
     public TextInputLayout txtInName; // txtIn for TextInput
 
-    @BindView (R.id.TInFirstName)
+    @BindView(R.id.TInFirstName)
     public TextInputLayout txtInFirstName;
 
     @BindView(R.id.TInStreet)
@@ -51,7 +51,7 @@ public class ProfilActivity extends MenuActivity {
     @BindView(R.id.TInCountry)
     public TextInputLayout txtInCountry;
 
-    @BindView (R.id.BSave)
+    @BindView(R.id.BSave)
     public Button bSave;
 
     @Override
@@ -64,7 +64,7 @@ public class ProfilActivity extends MenuActivity {
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.shared_pref_student), MODE_PRIVATE);
         int studentId = sharedPref.getInt(getString(R.string.id_current_student), -1);
 
-        if(Tool.hasInternet(ProfilActivity.this)) {
+        if (Tool.hasInternet(ProfilActivity.this)) {
             findStudentById(studentId);
         } else {
             Toast.makeText(ProfilActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
@@ -73,7 +73,7 @@ public class ProfilActivity extends MenuActivity {
         bSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkIndentifiers()) {
+                if (checkIndentifiers()) {
 
                     StudentEditForm editStudent = new StudentEditForm();
                     editStudent.setLastName(txtInName.getEditText().getText().toString());
@@ -88,9 +88,9 @@ public class ProfilActivity extends MenuActivity {
 
                     editStudent.setAddress(address);
 
-                    if(Tool.hasInternet(ProfilActivity.this)) {
-                        editStudent(studentId,editStudent);
-                        Intent intent = new Intent(ProfilActivity.this , CriterionStudentActivity.class);
+                    if (Tool.hasInternet(ProfilActivity.this)) {
+                        editStudent(studentId, editStudent);
+                        Intent intent = new Intent(ProfilActivity.this, CriterionStudentActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(ProfilActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
@@ -100,7 +100,7 @@ public class ProfilActivity extends MenuActivity {
             }
         });
 
-        if(savedInstanceState != null) {
+        if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
         }
     }
@@ -130,8 +130,6 @@ public class ProfilActivity extends MenuActivity {
         txtInPostCode.getEditText().setText(savedInstanceState.getString("postCode"));
         txtInCountry.getEditText().setText(savedInstanceState.getString("country"));
     }
-
-
 
 
     public boolean checkIndentifiers() {
@@ -173,7 +171,8 @@ public class ProfilActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();            }
+                Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
+            }
         });
     }
 
@@ -184,7 +183,7 @@ public class ProfilActivity extends MenuActivity {
         call.enqueue(new Callback<StudentDTO>() {
             @Override
             public void onResponse(Call<StudentDTO> call, Response<StudentDTO> response) {
-                if(!response.isSuccessful()){
+                if (!response.isSuccessful()) {
                     try {
                         Toast.makeText(ProfilActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {

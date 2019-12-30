@@ -68,12 +68,11 @@ public class OfferDetailsActivity extends MenuActivity {
         int idOffer = getIntent().getIntExtra("currentOffer", -1);
         ratingBar.setEnabled(false);
 
-        if(Tool.hasInternet(OfferDetailsActivity.this)) {
+        if (Tool.hasInternet(OfferDetailsActivity.this)) {
             findOfferById(idOffer);
         } else {
             Toast.makeText(OfferDetailsActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
         }
-
 
 
         bContact.setOnClickListener(new View.OnClickListener() {

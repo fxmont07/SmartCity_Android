@@ -61,7 +61,7 @@ public class CriterionStudentActivity extends MenuActivity {
         rVAdapter = new CriterionAdapter(criterionStudent, getApplicationContext(), getString(R.string.modifSaved));
         rVCriterion.setAdapter(rVAdapter);
 
-        if(Tool.hasInternet(CriterionStudentActivity.this)) {
+        if (Tool.hasInternet(CriterionStudentActivity.this)) {
             findCriterionStudentByStudentId(studentId);
         } else {
             Toast.makeText(CriterionStudentActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
@@ -74,7 +74,7 @@ public class CriterionStudentActivity extends MenuActivity {
                 putCriterions(((CriterionAdapter) rVAdapter).getCriterionsStudent());
                 Intent intent = new Intent(CriterionStudentActivity.this, OfferActivity.class);
                 String s = gson.toJson(criterionStudent);
-                intent.putExtra("criterions", s);
+                intent.putExtra("criterions", s); //TODO chaine de caractère
                 startActivity(intent);
             }
         });
@@ -95,19 +95,20 @@ public class CriterionStudentActivity extends MenuActivity {
                     }
                     return;
                 }
-                    List<CriterionStudentDTO> criterionStudentDTOS = response.body();
-                    for (CriterionStudentDTO criterion : criterionStudentDTOS) {
-                        criterionStudent.add(new CriterionStudent(
-                                criterion.getCriterionId(),
-                                criterion.getStudentId(),
-                                criterion.isMandatory() == 1,
-                                criterion.getDescription()
-                        ));
-                    }
-                        CriterionAdapter adapter = (CriterionAdapter) rVAdapter;
-                        adapter.setCriterions(criterionStudent);
-                        Objects.requireNonNull(rVCriterion.getAdapter()).notifyDataSetChanged();
+                List<CriterionStudentDTO> criterionStudentDTOS = response.body();
+                for (CriterionStudentDTO criterion : criterionStudentDTOS) {
+                    criterionStudent.add(new CriterionStudent(
+                            criterion.getCriterionId(),
+                            criterion.getStudentId(),
+                            criterion.isMandatory() == 1,
+                            criterion.getDescription()
+                    ));
+                }
+                CriterionAdapter adapter = (CriterionAdapter) rVAdapter;
+                adapter.setCriterions(criterionStudent);
+                Objects.requireNonNull(rVCriterion.getAdapter()).notifyDataSetChanged();
             }
+
             @Override
             public void onFailure(Call<List<CriterionStudentDTO>> call, Throwable t) {
                 Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();

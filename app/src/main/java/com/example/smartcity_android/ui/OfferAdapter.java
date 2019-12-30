@@ -51,7 +51,8 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferHolder>
 
         public void bind(int offerId, OnItemClickListener listener) {
             itemView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                     listener.onClick(offerId);
                 }
             });

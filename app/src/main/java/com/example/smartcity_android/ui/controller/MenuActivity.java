@@ -17,7 +17,7 @@ import static com.example.smartcity_android.R.menu.menu_main;
 public class MenuActivity extends AppCompatActivity {
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
         getMenuInflater().inflate(menu_main, menu);
@@ -27,9 +27,9 @@ public class MenuActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.myInfo:
-                if(Tool.hasInternet(MenuActivity.this)) {
+                if (Tool.hasInternet(MenuActivity.this)) {
                     intent = new Intent(this, ProfilActivity.class);
                     startActivity(intent);
                 } else {
@@ -37,7 +37,7 @@ public class MenuActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.myCriteria:
-                if(Tool.hasInternet(MenuActivity.this)) {
+                if (Tool.hasInternet(MenuActivity.this)) {
                     intent = new Intent(this, CriterionStudentActivity.class);
                     startActivity(intent);
                 } else {
