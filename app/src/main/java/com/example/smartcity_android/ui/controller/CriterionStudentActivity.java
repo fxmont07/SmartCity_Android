@@ -74,7 +74,7 @@ public class CriterionStudentActivity extends MenuActivity {
                 putCriterions(((CriterionAdapter) rVAdapter).getCriterionsStudent());
                 Intent intent = new Intent(CriterionStudentActivity.this, OfferActivity.class);
                 String s = gson.toJson(criterionStudent);
-                intent.putExtra("criterions", s); //TODO chaine de caractère
+                intent.putExtra("criterions", s);
                 startActivity(intent);
             }
         });

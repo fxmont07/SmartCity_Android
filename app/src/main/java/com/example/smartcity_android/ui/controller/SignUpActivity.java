@@ -162,7 +162,7 @@ public class SignUpActivity extends AppCompatActivity {
         Context context = getApplicationContext();
         return Tool.isEmailValid(txtInEmail, context) &
                 Tool.hasLengthValid(txtInPassword, context, 8) & //TODO méthode password
-                (txtInConfirmPassword.getEditText().getText().toString().compareTo(txtInPassword.getEditText().getText().toString()) == 0) &
+                Tool.isSame(txtInPassword, txtInConfirmPassword, context) &
                 Tool.hasLengthValid(txtInName, context, 1) &
                 Tool.hasLengthValid(txtInFirstName, context, 1) &
                 Tool.hasLengthValid(txtInStreet, context, 1) &

@@ -31,7 +31,7 @@ import retrofit2.Retrofit;
 public class ProfilActivity extends MenuActivity {
 
     @BindView(R.id.TInName)
-    public TextInputLayout txtInName; // txtIn for TextInput
+    public TextInputLayout txtInName;
 
     @BindView(R.id.TInFirstName)
     public TextInputLayout txtInFirstName;

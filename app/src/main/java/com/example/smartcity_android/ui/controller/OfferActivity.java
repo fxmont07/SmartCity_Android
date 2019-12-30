@@ -65,7 +65,7 @@ public class OfferActivity extends MenuActivity {
             public void onClick(int offerId) {
                 if (Tool.hasInternet(OfferActivity.this)) {
                     Intent intent = new Intent(OfferActivity.this, OfferDetailsActivity.class);
-                    intent.putExtra("currentOffer", offerId); //TODO chaine de caratère
+                    intent.putExtra("currentOffer", offerId);
                     startActivity(intent);
                 } else {
                     Toast.makeText(OfferActivity.this, R.string.internet, Toast.LENGTH_LONG).show();

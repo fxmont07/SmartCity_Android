@@ -50,4 +50,12 @@ public class Tool {
         return activeNetwork != null &&
                 activeNetwork.isConnectedOrConnecting();
     }
+
+    public static boolean isSame(TextInputLayout password, TextInputLayout confirmPassword, Context context){
+        if (password.getEditText().getText().toString().compareTo(confirmPassword.getEditText().getText().toString()) !=0) {
+            confirmPassword.setError(context.getText(R.string.wrongConfirmPassword));
+            return false;
+        }
+        return true;
+    }
 }

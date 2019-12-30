@@ -61,7 +61,7 @@ public class CriterionAdapter extends RecyclerView.Adapter<CriterionAdapter.Crit
 
     @Override
     public void onBindViewHolder(CriterionHolder holder, int position) {
-        holder.labelCriterion.setText(criterions.get(position).getDescription()); // TODO
+        holder.labelCriterion.setText(criterions.get(position).getDescription());
         holder.rBMandatory.setChecked(criterions.get(position).getMandatory());
         holder.rBForbidden.setChecked(!criterions.get(position).getMandatory());
 

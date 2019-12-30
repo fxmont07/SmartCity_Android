@@ -64,4 +64,5 @@
     <string name="confirmPassword">Confirm password</string>
     <string name="country">Country</string>
     <string name="wrongPostCode">The postal code must be between 1000 and 9999</string>
+    <string name="wrongConfirmPassword">Wrong confirm password</string>
 </resources>
