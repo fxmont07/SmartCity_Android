@@ -15,6 +15,7 @@ import com.example.smartcity_android.data.RetrofitFactory;
 import com.example.smartcity_android.data.model.CriterionStudent;
 import com.example.smartcity_android.data.model.DTO.CriterionStudentDTO;
 import com.example.smartcity_android.dataAccess.service.CriterionStudentService;
+import com.example.smartcity_android.repository.CriterionStudentRepo;
 import com.example.smartcity_android.tool.Tool;
 import com.example.smartcity_android.ui.CriterionAdapter;
 import com.google.gson.Gson;
@@ -59,7 +60,6 @@ public class CriterionStudentActivity extends MenuActivity {
 
         rVAdapter = new CriterionAdapter(criterionStudent, getApplicationContext(), getString(R.string.modifSaved));
         rVCriterion.setAdapter(rVAdapter);
-
 
         if(Tool.hasInternet(CriterionStudentActivity.this)) {
             findCriterionStudentByStudentId(studentId);
@@ -116,13 +116,8 @@ public class CriterionStudentActivity extends MenuActivity {
     }
 
     public void putCriterions(List<CriterionStudent> criterions) {
-        List<CriterionStudentDTO> criterionsDTO = new ArrayList<>();
-        for(CriterionStudent c : criterions) {
-            criterionsDTO.add(new CriterionStudentDTO(c.getCriterionId(),c.getStudentId(), c.getMandatory() ? 1 : 0, c.getDescription()));
-        }
-        Retrofit retrofit = RetrofitFactory.getIntanceWithToken();
-        CriterionStudentService criterionService = retrofit.create(CriterionStudentService.class);
-        Call<Void> call = criterionService.putCriterions(criterionsDTO);
+        CriterionStudentRepo repo = new CriterionStudentRepo();
+        Call<Void> call = repo.CritStudentToCritStudentDTO(criterions);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {

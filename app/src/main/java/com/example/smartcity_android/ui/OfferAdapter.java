@@ -2,7 +2,6 @@ package com.example.smartcity_android.ui;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,14 +67,6 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferHolder>
     public OfferAdapter.OfferHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_offer, parent, false);
-        v.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // TODO passé à vue details en fonction de la bonne offre
-                //Toast.makeText(context, "coucou", Toast.LENGTH_LONG).show();
-                Log.i("coucou", "coucou adapt");
-            }
-        });
         OfferAdapter.OfferHolder oH = new OfferAdapter.OfferHolder(v);
         return oH;
     }
@@ -83,7 +74,7 @@ public class OfferAdapter extends RecyclerView.Adapter<OfferAdapter.OfferHolder>
     @Override
     public void onBindViewHolder(OfferAdapter.OfferHolder holder, int position) {
         holder.bind(offers.get(position).getOfferId(), listener);
-        holder.img.setBorderWidth(offers.get(position).getPremium() ? 0 : 10);
+        holder.img.setBorderWidth(offers.get(position).getPremium() ? 10 : 0);
         holder.img.setBorderColor(Color.YELLOW);
         holder.compagnyName.setText(offers.get(position).getCompany());
         holder.ratingBar.setRating(offers.get(position).getRating());

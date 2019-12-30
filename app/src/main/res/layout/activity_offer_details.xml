@@ -41,7 +41,6 @@
                 style="@style/Widget.AppCompat.TextView.SpinnerItem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The company name"
                 android:textSize="26sp"
                 app:layout_constraintEnd_toEndOf="@+id/IOffer"
                 app:layout_constraintStart_toStartOf="@+id/IOffer"
@@ -68,7 +67,6 @@
                 android:layout_marginTop="8dp"
                 android:paddingStart="32dp"
                 android:paddingTop="16dp"
-                android:text="Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim Loreim "
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TOfferDescriptionTitle" />
@@ -101,7 +99,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TLocationTitle" />
@@ -123,7 +120,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TOfferTitleTitle" />

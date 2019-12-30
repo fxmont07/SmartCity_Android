@@ -137,6 +137,7 @@ public class OfferDetailsActivity extends MenuActivity {
                 ratingBar.setRating(offerDetails.getCompany().getRating());
                 txtTitle.setText(offerDetails.getTitleJob());
                 txtDescriptionOffer.setText(offerDetails.getDescription());
+                imgOffer.setBorderWidth(offerDetails.getCompany().isPremium() ? 10 : 0);
                 txtLocation.setText(offerDetails.getAddress().displayAddress());
 
                 bContact.setOnClickListener(new View.OnClickListener() {

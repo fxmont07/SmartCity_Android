@@ -6,10 +6,10 @@ public class CriterionStudent {
     private Boolean isMandatory;
     private String description;
 
-    public CriterionStudent(Integer criterionId, Integer studentId, Boolean isMandatoy, String description) {
+    public CriterionStudent(Integer criterionId, Integer studentId, Boolean isMandatory, String description) {
         this.criterionId = criterionId;
         this.studentId = studentId;
-        this.isMandatory = isMandatoy;
+        this.isMandatory = isMandatory;
         this.description = description;
     }
 
