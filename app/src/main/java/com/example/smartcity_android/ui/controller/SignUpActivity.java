@@ -57,9 +57,6 @@ public class SignUpActivity extends AppCompatActivity {
     @BindView(R.id.TInStreetNumber)
     public TextInputLayout txtInStreetNumber;
 
-    @BindView(R.id.TInPhone)
-    public TextInputLayout txtInPhone;
-
     @BindView(R.id.TInLocality)
     public TextInputLayout txtInLocality;
 
@@ -116,10 +113,9 @@ public class SignUpActivity extends AppCompatActivity {
                     address.setCountry(txtInCountry.getEditText().getText().toString());
                     newStudent.setAddress(address);
 
+
                     if(Tool.hasInternet(SignUpActivity.this)) {
                         addStudent(newStudent);
-                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
-                        startActivity(intent);
                     } else {
                         Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
                     }
@@ -141,7 +137,6 @@ public class SignUpActivity extends AppCompatActivity {
         outState.putString("firstName", txtInFirstName.getEditText().getText().toString());
         outState.putString("street", txtInStreet.getEditText().getText().toString());
         outState.putString("num", txtInStreetNumber.getEditText().getText().toString());
-        outState.putString("phone", txtInPhone.getEditText().getText().toString());
         outState.putString("locality", txtInLocality.getEditText().getText().toString());
         outState.putString("postCode", txtInPostCode.getEditText().getText().toString());
         outState.putString("country", txtInCountry.getEditText().getText().toString());
@@ -158,7 +153,6 @@ public class SignUpActivity extends AppCompatActivity {
         txtInFirstName.getEditText().setText(savedInstanceState.getString("firstName"));
         txtInStreet.getEditText().setText(savedInstanceState.getString("street"));
         txtInStreetNumber.getEditText().setText(savedInstanceState.getString("num"));
-        txtInPhone.getEditText().setText(savedInstanceState.getString("phone"));
         txtInLocality.getEditText().setText(savedInstanceState.getString("locality"));
         txtInPostCode.getEditText().setText(savedInstanceState.getString("postCode"));
         txtInCountry.getEditText().setText(savedInstanceState.getString("country"));
@@ -173,7 +167,6 @@ public class SignUpActivity extends AppCompatActivity {
                 Tool.hasLengthValid(txtInFirstName, context, 1) &
                 Tool.hasLengthValid(txtInStreet, context, 1) &
                 Tool.hasLengthValid(txtInStreetNumber, context, 1) &
-                Tool.hasLengthValid(txtInPhone, context, 1) &
                 Tool.hasLengthValid(txtInLocality, context, 1) &
                 Tool.hasPostCodeValid(txtInPostCode, context) &
                 Tool.hasLengthValid(txtInCountry, context, 1)
@@ -222,6 +215,8 @@ public class SignUpActivity extends AppCompatActivity {
                     }
                     return;
                 }
+                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                startActivity(intent);
             }
 
             @Override
