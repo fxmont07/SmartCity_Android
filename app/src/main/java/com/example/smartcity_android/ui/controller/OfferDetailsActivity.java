@@ -65,7 +65,7 @@ public class OfferDetailsActivity extends MenuActivity {
         setContentView(R.layout.activity_offer_details);
         ButterKnife.bind(this);
 
-        int idOffer = getIntent().getIntExtra("currentOffer", -1);
+        int idOffer = getIntent().getIntExtra(getString(R.string.currentOffer), -1);
         ratingBar.setEnabled(false);
 
         if(Tool.hasInternet(OfferDetailsActivity.this)) {
@@ -81,7 +81,7 @@ public class OfferDetailsActivity extends MenuActivity {
             public void onClick(View v) {
                 /*Intent intent  = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", offer.getCompany().getEmail(), null));
                 startActivity(Intent.createChooser(intent, getString(R.string.mailTitle)));*/
-                Toast.makeText(OfferDetailsActivity.this, "Non implémenté", Toast.LENGTH_LONG).show();
+                Toast.makeText(OfferDetailsActivity.this, getString(R.string.nonimplemented), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -91,7 +91,7 @@ public class OfferDetailsActivity extends MenuActivity {
                 /*Intent intent = new Intent(OfferDetailsActivity.this, EvaluateActivity.class);
                 intent.putExtra("companyId", offer.getCompany().getId());
                 startActivity(intent);*/
-                Toast.makeText(OfferDetailsActivity.this, "Non implémenté", Toast.LENGTH_LONG).show();
+                Toast.makeText(OfferDetailsActivity.this, getString(R.string.nonimplemented), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -101,7 +101,7 @@ public class OfferDetailsActivity extends MenuActivity {
                 /*Intent intent = new Intent(OfferDetailsActivity.this, EvaluationListingActivity.class);
                 intent.putExtra("companyId", offer.getCompany().getId());
                 startActivity(intent);*/
-                Toast.makeText(OfferDetailsActivity.this, "Non implémenté", Toast.LENGTH_LONG).show();
+                Toast.makeText(OfferDetailsActivity.this, getString(R.string.nonimplemented), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -110,7 +110,7 @@ public class OfferDetailsActivity extends MenuActivity {
             public void onClick(View v) {
                 /*Intent intent = new Intent(OfferDetailsActivity.this, MapActivity.class);
                 startActivity(intent);*/
-                Toast.makeText(OfferDetailsActivity.this, "Non implémenté", Toast.LENGTH_LONG).show();
+                Toast.makeText(OfferDetailsActivity.this, getString(R.string.nonimplemented), Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -113,7 +113,6 @@ public class SignUpActivity extends AppCompatActivity {
                     address.setCountry(txtInCountry.getEditText().getText().toString());
                     newStudent.setAddress(address);
 
-
                     if(Tool.hasInternet(SignUpActivity.this)) {
                         addStudent(newStudent);
                     } else {
@@ -130,32 +129,32 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("email", txtInEmail.getEditText().getText().toString());
-        outState.putString("password", txtInPassword.getEditText().getText().toString());
-        outState.putString("confirmPassword", txtInConfirmPassword.getEditText().getText().toString());
-        outState.putString("name", txtInName.getEditText().getText().toString());
-        outState.putString("firstName", txtInFirstName.getEditText().getText().toString());
-        outState.putString("street", txtInStreet.getEditText().getText().toString());
-        outState.putString("num", txtInStreetNumber.getEditText().getText().toString());
-        outState.putString("locality", txtInLocality.getEditText().getText().toString());
-        outState.putString("postCode", txtInPostCode.getEditText().getText().toString());
-        outState.putString("country", txtInCountry.getEditText().getText().toString());
+        outState.putString(getString(R.string.email), txtInEmail.getEditText().getText().toString());
+        outState.putString(getString(R.string.password), txtInPassword.getEditText().getText().toString());
+        outState.putString(getString(R.string.confirmPassword), txtInConfirmPassword.getEditText().getText().toString());
+        outState.putString(getString(R.string.name), txtInName.getEditText().getText().toString());
+        outState.putString(getString(R.string.firstName), txtInFirstName.getEditText().getText().toString());
+        outState.putString(getString(R.string.street), txtInStreet.getEditText().getText().toString());
+        outState.putString(getString(R.string.streetNumber), txtInStreetNumber.getEditText().getText().toString());
+        outState.putString(getString(R.string.locality), txtInLocality.getEditText().getText().toString());
+        outState.putString(getString(R.string.postCode), txtInPostCode.getEditText().getText().toString());
+        outState.putString(getString(R.string.country), txtInCountry.getEditText().getText().toString());
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        txtInEmail.getEditText().setText(savedInstanceState.getString("email"));
-        txtInPassword.getEditText().setText(savedInstanceState.getString("password"));
-        txtInConfirmPassword.getEditText().setText(savedInstanceState.getString("confirmPassword"));
-        txtInName.getEditText().setText(savedInstanceState.getString("name"));
-        txtInFirstName.getEditText().setText(savedInstanceState.getString("firstName"));
-        txtInStreet.getEditText().setText(savedInstanceState.getString("street"));
-        txtInStreetNumber.getEditText().setText(savedInstanceState.getString("num"));
-        txtInLocality.getEditText().setText(savedInstanceState.getString("locality"));
-        txtInPostCode.getEditText().setText(savedInstanceState.getString("postCode"));
-        txtInCountry.getEditText().setText(savedInstanceState.getString("country"));
+        txtInEmail.getEditText().setText(savedInstanceState.getString(getString(R.string.email)));
+        txtInPassword.getEditText().setText(savedInstanceState.getString(getString(R.string.password)));
+        txtInConfirmPassword.getEditText().setText(savedInstanceState.getString(getString(R.string.confirmPassword)));
+        txtInName.getEditText().setText(savedInstanceState.getString(getString(R.string.name)));
+        txtInFirstName.getEditText().setText(savedInstanceState.getString(getString(R.string.firstName)));
+        txtInStreet.getEditText().setText(savedInstanceState.getString(getString(R.string.street)));
+        txtInStreetNumber.getEditText().setText(savedInstanceState.getString(getString(R.string.streetNumber)));
+        txtInLocality.getEditText().setText(savedInstanceState.getString(getString(R.string.locality)));
+        txtInPostCode.getEditText().setText(savedInstanceState.getString(getString(R.string.postCode)));
+        txtInCountry.getEditText().setText(savedInstanceState.getString(getString(R.string.country)));
     }
 
     public boolean checkIndentifiers() {

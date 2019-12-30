@@ -48,4 +48,7 @@
     <string name="wrongPostCode">Le code postal doit être compris entre 1000 et 9999</string>
     <string name="internet">Internet requis</string>
     <string name="noSucces">Demande non réussie réessayer ou contacter le support informatique</string>
+    <string name="criterions">criterions</string>
+    <string name="currentOffer">currentOffer</string>
+    <string name="nonimplemented">Non implémenté</string>
 </resources>

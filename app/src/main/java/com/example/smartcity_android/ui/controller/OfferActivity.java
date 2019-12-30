@@ -52,7 +52,7 @@ public class OfferActivity extends MenuActivity  {
         Type criterionsType;
 
         criterionsType = new TypeToken<ArrayList<CriterionStudent>>(){}.getType();
-        String sJson = getIntent().getStringExtra("criterions");
+        String sJson = getIntent().getStringExtra(getString(R.string.criterions));
         criterionStudents = gson.fromJson(sJson, criterionsType);
 
         rVOffer.setHasFixedSize(true);
@@ -64,7 +64,7 @@ public class OfferActivity extends MenuActivity  {
             @Override public void onClick(int offerId) {
                 if(Tool.hasInternet(OfferActivity.this)) {
                     Intent intent = new Intent(OfferActivity.this, OfferDetailsActivity.class);
-                    intent.putExtra("currentOffer", offerId);
+                    intent.putExtra(getString(R.string.currentOffer), offerId);
                     startActivity(intent);
                 } else {
                     Toast.makeText(OfferActivity.this, R.string.internet, Toast.LENGTH_LONG).show();

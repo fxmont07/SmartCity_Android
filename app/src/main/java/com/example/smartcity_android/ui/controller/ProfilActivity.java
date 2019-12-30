@@ -109,30 +109,27 @@ public class ProfilActivity extends MenuActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putString("name", txtInName.getEditText().getText().toString());
-        outState.putString("firstName", txtInFirstName.getEditText().getText().toString());
-        outState.putString("street", txtInStreet.getEditText().getText().toString());
-        outState.putString("num", txtInStreetNumber.getEditText().getText().toString());
-        outState.putString("locality", txtInLocality.getEditText().getText().toString());
-        outState.putString("postCode", txtInPostCode.getEditText().getText().toString());
-        outState.putString("country", txtInCountry.getEditText().getText().toString());
+        outState.putString(getString(R.string.name), txtInName.getEditText().getText().toString());
+        outState.putString(getString(R.string.firstName), txtInFirstName.getEditText().getText().toString());
+        outState.putString(getString(R.string.street), txtInStreet.getEditText().getText().toString());
+        outState.putString(getString(R.string.streetNumber), txtInStreetNumber.getEditText().getText().toString());
+        outState.putString(getString(R.string.locality), txtInLocality.getEditText().getText().toString());
+        outState.putString(getString(R.string.postCode), txtInPostCode.getEditText().getText().toString());
+        outState.putString(getString(R.string.country), txtInCountry.getEditText().getText().toString());
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        txtInName.getEditText().setText(savedInstanceState.getString("name"));
-        txtInFirstName.getEditText().setText(savedInstanceState.getString("firstName"));
-        txtInStreet.getEditText().setText(savedInstanceState.getString("street"));
-        txtInStreetNumber.getEditText().setText(savedInstanceState.getString("num"));
-        txtInLocality.getEditText().setText(savedInstanceState.getString("locality"));
-        txtInPostCode.getEditText().setText(savedInstanceState.getString("postCode"));
-        txtInCountry.getEditText().setText(savedInstanceState.getString("country"));
+        txtInName.getEditText().setText(savedInstanceState.getString(getString(R.string.name)));
+        txtInFirstName.getEditText().setText(savedInstanceState.getString(getString(R.string.firstName)));
+        txtInStreet.getEditText().setText(savedInstanceState.getString(getString(R.string.street)));
+        txtInStreetNumber.getEditText().setText(savedInstanceState.getString(getString(R.string.streetNumber)));
+        txtInLocality.getEditText().setText(savedInstanceState.getString(getString(R.string.country)));
+        txtInPostCode.getEditText().setText(savedInstanceState.getString(getString(R.string.postCode)));
+        txtInCountry.getEditText().setText(savedInstanceState.getString(getString(R.string.country)));
     }
-
-
-
 
     public boolean checkIndentifiers() {
         Context context = getApplicationContext();

@@ -29,7 +29,7 @@ protected void onCreate(Bundle savedInstanceState) {
     ButterKnife.bind(this);
 
     //test = new Test();
-    int companyId = getIntent().getIntExtra("companyID", -1);
+    //int companyId = getIntent().getIntExtra("companyID", -1);
 
     rVEvaluation.setHasFixedSize(true);
 

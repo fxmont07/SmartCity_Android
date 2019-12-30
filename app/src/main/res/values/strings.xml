@@ -58,6 +58,12 @@
     <string name="shared_pref_student">student</string>
     <!-- Key In shared_pref_student -->
     <string name="id_current_student">id_current_student</string>
+    <string name="criterions">criterions</string>
+    <string name="currentOffer">currentOffer</string>
+    <string name="nonimplemented">nonimplemented</string>
+
+
+
 
     <string name="logout">Log out</string>
     <string name="myCriteria">myCriteria</string>

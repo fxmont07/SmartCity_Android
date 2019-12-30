@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         buttonForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Non implémenté", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, getString(R.string.nonimplemented), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -101,15 +101,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString("email", Objects.requireNonNull(txtInEmail.getEditText()).getText().toString());
-        outState.putString("password", Objects.requireNonNull(txtInPassword.getEditText()).getText().toString());
+        outState.putString(getString(R.string.email), Objects.requireNonNull(txtInEmail.getEditText()).getText().toString());
+        outState.putString(getString(R.string.password), Objects.requireNonNull(txtInPassword.getEditText()).getText().toString());
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        Objects.requireNonNull(txtInEmail.getEditText()).setText(savedInstanceState.getString("email"));
-        txtInPassword.getEditText().setText(savedInstanceState.getString("password"));
+        Objects.requireNonNull(txtInEmail.getEditText()).setText(savedInstanceState.getString(getString(R.string.email)));
+        txtInPassword.getEditText().setText(savedInstanceState.getString(getString(R.string.password)));
     }
 
     // Methods
@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void TestID() {
+        // Pour vous éviter de recopier
         Objects.requireNonNull(txtInEmail.getEditText()).setText("student@mail.be");
         Objects.requireNonNull(txtInPassword.getEditText()).setText("mdpStudent");
     }
