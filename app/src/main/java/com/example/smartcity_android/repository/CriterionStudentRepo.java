@@ -17,8 +17,8 @@ public class CriterionStudentRepo {
 
     public Call<Void> CritStudentToCritStudentDTO(List<CriterionStudent> criterions) {
         List<CriterionStudentDTO> criterionsDTO = new ArrayList<>();
-        for(CriterionStudent c : criterions) {
-            criterionsDTO.add(new CriterionStudentDTO(c.getCriterionId(),c.getStudentId(), c.getMandatory() ? 1 : 0, c.getDescription()));
+        for (CriterionStudent c : criterions) {
+            criterionsDTO.add(new CriterionStudentDTO(c.getCriterionId(), c.getStudentId(), c.getMandatory() ? 1 : 0, c.getDescription()));
         }
         Retrofit retrofit = RetrofitFactory.getIntanceWithToken();
         CriterionStudentService criterionService = retrofit.create(CriterionStudentService.class);

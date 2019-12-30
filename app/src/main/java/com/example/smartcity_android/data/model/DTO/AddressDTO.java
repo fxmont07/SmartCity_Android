@@ -68,7 +68,6 @@ public class AddressDTO {
     }
 
     public String displayAddress() {
-        return country.substring(0,2) + " - " + postCode + ", " + locality + "\n" +
-                street + ", " + number;
+        return country.substring(0, 2) + " - " + postCode + ", " + locality + "\n" + street + ", " + number;
     }
 }

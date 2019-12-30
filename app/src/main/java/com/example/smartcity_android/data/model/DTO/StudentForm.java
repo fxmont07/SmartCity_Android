@@ -2,19 +2,13 @@ package com.example.smartcity_android.data.model.DTO;
 
 public class StudentForm {
 
-    private String Email ;
-
-    private String Password ;
-
-    private String ConfirmPassword ;
-
-    private String LastName ;
-
-    private String FirstName ;
-
-    private AddressDTO Address ;
-
-    private String Section ;
+    private String Email;
+    private String Password;
+    private String ConfirmPassword;
+    private String LastName;
+    private String FirstName;
+    private AddressDTO Address;
+    private String Section;
 
 
     public String getEmail() {

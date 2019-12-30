@@ -51,4 +51,5 @@
     <string name="criterions">criterions</string>
     <string name="currentOffer">currentOffer</string>
     <string name="nonimplemented">Non implémenté</string>
+    <string name="wrongConfirmPassword">Les mots de passe doivent être les même</string>
 </resources>

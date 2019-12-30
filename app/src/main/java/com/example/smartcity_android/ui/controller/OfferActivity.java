@@ -31,7 +31,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class OfferActivity extends MenuActivity  {
+public class OfferActivity extends MenuActivity {
 
     @BindView(R.id.RVEvaluation)
     public RecyclerView rVOffer;
@@ -61,8 +61,9 @@ public class OfferActivity extends MenuActivity  {
         rVOffer.setLayoutManager((rVLayout));
 
         rVAdapter = new OfferAdapter(offerResultMatchings, getApplicationContext(), new OfferAdapter.OnItemClickListener() {
-            @Override public void onClick(int offerId) {
-                if(Tool.hasInternet(OfferActivity.this)) {
+            @Override
+            public void onClick(int offerId) {
+                if (Tool.hasInternet(OfferActivity.this)) {
                     Intent intent = new Intent(OfferActivity.this, OfferDetailsActivity.class);
                     intent.putExtra(getString(R.string.currentOffer), offerId);
                     startActivity(intent);
@@ -74,7 +75,7 @@ public class OfferActivity extends MenuActivity  {
 
         rVOffer.setAdapter(rVAdapter);
 
-        if(Tool.hasInternet(OfferActivity.this)) {
+        if (Tool.hasInternet(OfferActivity.this)) {
             postMatchCriterions();
         } else {
             Toast.makeText(OfferActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
@@ -85,7 +86,7 @@ public class OfferActivity extends MenuActivity  {
         Retrofit retrofit = RetrofitFactory.getIntanceWithToken();
         CriterionStudentService criterionService = retrofit.create(CriterionStudentService.class);
         ArrayList<CriterionStudentDTO> criterionStudentDTOS = new ArrayList<>();
-        for(CriterionStudent criterionStudent : criterionStudents) {
+        for (CriterionStudent criterionStudent : criterionStudents) {
             criterionStudentDTOS.add(new CriterionStudentDTO(
                             criterionStudent.getCriterionId(),
                             criterionStudent.getStudentId(),
@@ -106,11 +107,11 @@ public class OfferActivity extends MenuActivity  {
                     }
                     return;
                 }
-                    List<OfferResultMatching> offers = response.body();
-                    offerResultMatchings.addAll(offers);
-                    OfferAdapter adapter = (OfferAdapter) rVAdapter;
-                    adapter.setOffers(offerResultMatchings);
-                    Objects.requireNonNull(rVOffer.getAdapter()).notifyDataSetChanged();
+                List<OfferResultMatching> offers = response.body();
+                offerResultMatchings.addAll(offers);
+                OfferAdapter adapter = (OfferAdapter) rVAdapter;
+                adapter.setOffers(offerResultMatchings);
+                Objects.requireNonNull(rVOffer.getAdapter()).notifyDataSetChanged();
             }
 
             @Override

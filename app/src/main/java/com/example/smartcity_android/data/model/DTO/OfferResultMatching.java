@@ -76,6 +76,6 @@ public class OfferResultMatching {
     }
 
     public String displayShortAddress() {
-        return address.getCountry().substring(0,2) + " - " + address.getPostCode() + ", " + address.getLocality();
+        return address.getCountry().substring(0, 2) + " - " + address.getPostCode() + ", " + address.getLocality();
     }
 }

@@ -2,14 +2,11 @@ package com.example.smartcity_android.data.model.DTO;
 
 public class StudentEditForm {
 
-
     private String LastName;
-
     private String FirstName;
-
     private AddressDTO Address;
-
     private String SectionName;
+
 
     public String getLastName() {
         return LastName;

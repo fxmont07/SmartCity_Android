@@ -84,7 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         ButterKnife.bind(this);
 
-        if(Tool.hasInternet(SignUpActivity.this)) {
+        if (Tool.hasInternet(SignUpActivity.this)) {
             findAllSection();
         } else {
             Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
@@ -113,7 +113,7 @@ public class SignUpActivity extends AppCompatActivity {
                     address.setCountry(txtInCountry.getEditText().getText().toString());
                     newStudent.setAddress(address);
 
-                    if(Tool.hasInternet(SignUpActivity.this)) {
+                    if (Tool.hasInternet(SignUpActivity.this)) {
                         addStudent(newStudent);
                     } else {
                         Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
@@ -160,8 +160,8 @@ public class SignUpActivity extends AppCompatActivity {
     public boolean checkIndentifiers() {
         Context context = getApplicationContext();
         return Tool.isEmailValid(txtInEmail, context) &
-                Tool.hasLengthValid(txtInPassword, context, 8) &
-                (txtInConfirmPassword.getEditText().getText().toString().compareTo(txtInPassword.getEditText().getText().toString()) == 0) &
+                Tool.hasLengthValid(txtInPassword, context, 8) & //TODO méthode password
+                Tool.isSame(txtInPassword, txtInConfirmPassword, context) &
                 Tool.hasLengthValid(txtInName, context, 1) &
                 Tool.hasLengthValid(txtInFirstName, context, 1) &
                 Tool.hasLengthValid(txtInStreet, context, 1) &
@@ -172,7 +172,7 @@ public class SignUpActivity extends AppCompatActivity {
                 ;
     }
 
-    public void findAllSection(){
+    public void findAllSection() {
         Retrofit retrofit = RetrofitFactory.getIntanceWithoutToken();
         SectionService sectionService = retrofit.create(SectionService.class);
         Call<List<SectionDTO>> call = sectionService.get();
@@ -188,7 +188,7 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
                 List<SectionDTO> sections = response.body();
-                for(SectionDTO sectionDTO : sections)
+                for (SectionDTO sectionDTO : sections)
                     sectionList.add(sectionDTO.getName());
             }
 
@@ -199,7 +199,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    public void addStudent(StudentForm newStudent){
+    public void addStudent(StudentForm newStudent) {
         Retrofit retrofit = RetrofitFactory.getIntanceWithoutToken();
         StudentService studentService = retrofit.create(StudentService.class);
         Call<StudentDTO> call = studentService.addStudent(newStudent);
@@ -220,7 +220,8 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();            }
+                Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

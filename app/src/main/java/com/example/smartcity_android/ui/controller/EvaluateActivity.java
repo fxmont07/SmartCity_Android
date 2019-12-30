@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.smartcity_android.R;
 
 public class EvaluateActivity extends AppCompatActivity {
-// Non implémenté
+    // Non implémenté
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

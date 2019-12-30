@@ -10,7 +10,6 @@ public class OfferDetails {
     private AddressDTO address;
 
 
-
     public OfferDetails() {
     }
 
