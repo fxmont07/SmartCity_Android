@@ -154,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, CriterionStudentActivity.class);
                 startActivity(intent);
-
             }
 
             @Override

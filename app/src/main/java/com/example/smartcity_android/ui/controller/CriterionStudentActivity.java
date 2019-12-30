@@ -130,13 +130,11 @@ public class CriterionStudentActivity extends MenuActivity {
                     return;
                 }
                 Toast.makeText(CriterionStudentActivity.this, R.string.save, Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
                 Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
-
             }
         });
     }

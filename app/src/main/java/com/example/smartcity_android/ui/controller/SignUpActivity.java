@@ -93,7 +93,6 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(SignUpActivity.this, R.string.internet, Toast.LENGTH_LONG).show();
         }
 
-
         adapter = new ArrayAdapter(SignUpActivity.this, android.R.layout.simple_list_item_1, sectionList);
         sSpSection.setAdapter(adapter);
         sSpSection.setTitle(getString(R.string.section));
@@ -116,7 +115,6 @@ public class SignUpActivity extends AppCompatActivity {
                     address.setPostCode(txtInPostCode.getEditText().getText().toString());
                     address.setCountry(txtInCountry.getEditText().getText().toString());
                     newStudent.setAddress(address);
-
 
                     if(Tool.hasInternet(SignUpActivity.this)) {
                         addStudent(newStudent);

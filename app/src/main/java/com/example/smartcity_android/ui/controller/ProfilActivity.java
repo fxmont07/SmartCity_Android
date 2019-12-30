@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -197,7 +196,7 @@ public class ProfilActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Log.i("editStudent", "error"); //TODO à virer
+                Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
             }
         });
     }
