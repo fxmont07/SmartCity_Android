@@ -31,8 +31,8 @@ public class Tool {
     }
 
     public static boolean hasPostCodeValid(TextInputLayout target, Context context){
-        if(target.getEditText().getText().toString().compareTo("1000") < 0 && target.getEditText().getText().toString().compareTo("9999") > 0){
-            target.setError(context.getText(R.string.wrongFieldLength));
+        if(Integer.parseInt(target.getEditText().getText().toString().trim()) < 1000 || Integer.parseInt(target.getEditText().getText().toString().trim()) > 9999){
+            target.setError(context.getText(R.string.wrongPostCode));
             return false;
         }
         return true;
