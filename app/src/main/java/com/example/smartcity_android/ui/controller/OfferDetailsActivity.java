@@ -126,7 +126,7 @@ public class OfferDetailsActivity extends MenuActivity {
                     try {
                         Toast.makeText(OfferDetailsActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(OfferDetailsActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(OfferDetailsActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
                     }
                     return;
                 }
@@ -151,7 +151,7 @@ public class OfferDetailsActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<OfferDetails> call, Throwable t) {
-                Toast.makeText(OfferDetailsActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                Toast.makeText(OfferDetailsActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
             }
         });
     }

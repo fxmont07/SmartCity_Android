@@ -91,7 +91,7 @@ public class CriterionStudentActivity extends MenuActivity {
                     try {
                         Toast.makeText(CriterionStudentActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CriterionStudentActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
                     }
                     return;
                 }
@@ -111,7 +111,7 @@ public class CriterionStudentActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<List<CriterionStudentDTO>> call, Throwable t) {
-                Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CriterionStudentActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -126,7 +126,7 @@ public class CriterionStudentActivity extends MenuActivity {
                     try {
                         Toast.makeText(CriterionStudentActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CriterionStudentActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
                     }
                     return;
                 }
@@ -135,7 +135,7 @@ public class CriterionStudentActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-                Toast.makeText(CriterionStudentActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                Toast.makeText(CriterionStudentActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
             }
         });
     }

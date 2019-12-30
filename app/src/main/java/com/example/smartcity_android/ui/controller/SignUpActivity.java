@@ -183,7 +183,7 @@ public class SignUpActivity extends AppCompatActivity {
                     try {
                         Toast.makeText(SignUpActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
                     }
                     return;
                 }
@@ -194,7 +194,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<SectionDTO>> call, Throwable t) {
-                Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -210,7 +210,7 @@ public class SignUpActivity extends AppCompatActivity {
                     try {
                         Toast.makeText(SignUpActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUpActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
                     }
                     return;
                 }
@@ -220,7 +220,7 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Toast.makeText(SignUpActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
             }
         });
     }

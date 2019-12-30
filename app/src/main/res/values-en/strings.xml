@@ -22,9 +22,9 @@
     <string name="criterion">My criterions</string>
     <string name="forbidden">Forbidden</string>
     <string name="label">Criterion</string>
-    <string name="mandatory">Mandotory</string>
+    <string name="mandatory">Mandatory</string>
     <string name="optional">Optional</string>
-    <string name="forgotPassword">Forgoy password</string>
+    <string name="forgotPassword">Forgot password</string>
     <string name="section">Section</string>
     <string name="modifSaved">Modification saved</string>
     <string name="answer">Secret answer</string>
@@ -36,7 +36,7 @@
     <string name="id_current_student">id_current_student</string>
     <string name="wrongFieldLength">"The field length might be over "</string>
     <string name="logout">Log out</string>
-    <string name="myCriteria">myCriteria</string>
+    <string name="myCriteria">My Criteria</string>
     <string name="contact">Contact</string>
     <string name="evaluate">Evaluate</string>
     <string name="mailTitle">Send email</string>
@@ -47,7 +47,7 @@
     <string name="country">Country</string>
     <string name="wrongPostCode">The postal code must be between 1000 and 9999</string>
     <string name="internet">"Internet required "</string>
-    <string name="noSucces">Request not succes try again or contact the informatic service</string>
+    <string name="noSuccess">Request not success try again or contact the informatic service</string>
     <string name="criterions">criterions</string>
     <string name="currentOffer">currentOffer</string>
     <string name="nonimplemented">No implemented</string>

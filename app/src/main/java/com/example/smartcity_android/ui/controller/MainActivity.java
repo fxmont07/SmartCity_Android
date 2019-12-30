@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
                         txtError.setVisibility(View.VISIBLE);
                         Toast.makeText(MainActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(MainActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
                     }
                     return;
                 }
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<TokenDTO> call, Throwable t) {
-                Toast.makeText(MainActivity.this, R.string.noSucces, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.noSuccess, Toast.LENGTH_SHORT).show();
             }
         });
     }

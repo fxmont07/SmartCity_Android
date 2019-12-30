@@ -154,7 +154,7 @@ public class ProfilActivity extends MenuActivity {
                     try {
                         Toast.makeText(ProfilActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ProfilActivity.this, R.string.noSuccess, Toast.LENGTH_LONG).show();
                     }
                     return;
                 }
@@ -170,7 +170,7 @@ public class ProfilActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfilActivity.this, R.string.noSuccess, Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -186,7 +186,7 @@ public class ProfilActivity extends MenuActivity {
                     try {
                         Toast.makeText(ProfilActivity.this, response.errorBody().string(), Toast.LENGTH_LONG).show();
                     } catch (IOException e) {
-                        Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
+                        Toast.makeText(ProfilActivity.this, R.string.noSuccess, Toast.LENGTH_LONG).show();
                     }
                     return;
                 }
@@ -194,7 +194,7 @@ public class ProfilActivity extends MenuActivity {
 
             @Override
             public void onFailure(Call<StudentDTO> call, Throwable t) {
-                Toast.makeText(ProfilActivity.this, R.string.noSucces, Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfilActivity.this, R.string.noSuccess, Toast.LENGTH_LONG).show();
             }
         });
     }
